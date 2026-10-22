@@ -1,6 +1,6 @@
 # RISE Labs website
 
-The website for RISE Labs, Department of Aerospace Engineering, University of Illinois Urbana-Champaign.
+The website for RISE Labs (Rocket Integration, Systems & Energetics), Dr. Joseph Fernando Gonzalez's research group in the Department of Aerospace Engineering, University of Illinois Urbana-Champaign.
 
 It is plain HTML and CSS. There is no framework and no build step. Node.js is only used to preview the site on your computer.
 
