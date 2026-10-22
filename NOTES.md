@@ -57,7 +57,7 @@ Decision needed: which path, the exact name, and who pays.
 - [ ] Lab name and logo confirmed with the university (Luke)
 - [ ] Who writes the text for each page (About us, PEARL, SPIRIT, Student collaboration, Sponsorships, Join the team)
 - [ ] Photos: high-quality landscape photos, professional headshots, and RISE Labs polos for the photos (from the email thread)
-- [ ] A short CAD spin video for the home page
+- [ ] Interactive CAD model (or a short spin video) for the home page
 
 ## Launch steps
 

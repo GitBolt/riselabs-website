@@ -17,9 +17,13 @@
   <!-- ===== Header (same on every page) ===== -->
   <header class="site-header">
     <div class="container header-inner">
+      <!-- Logo: replace the "Logo" box with <img class="logo" src="images/logo.png" alt="RISE Labs logo"> -->
       <a class="brand" href="index.html">
-        <span class="brand-name">RISE Labs</span>
-        <span class="brand-sub">Rocket Integration, Systems &amp; Energetics</span>
+        <span class="logo-slot">Logo</span>
+        <span>
+          <span class="brand-name">RISE Labs</span>
+          <span class="brand-sub">Rocket Integration, Systems &amp; Energetics</span>
+        </span>
       </a>
       <nav class="main-nav">
         <a href="about.html">About us</a>
@@ -38,7 +42,7 @@
     <span class="hero-label">Landscape photo</span>
     <div class="container">
       <h1 class="big-title">RISE Labs</h1>
-      <p class="intro">Rocket Integration, Systems &amp; Energetics. Dr. Joseph Fernando Gonzalez's research group in Aerospace Engineering at Illinois.</p>
+      <p class="intro"><span class="draft">Mission statement TBD, 1–2 sentences on what RISE does</span></p>
       <div class="buttons">
         <a href="about.html" class="button button-orange">About us</a>
         <a href="join.html" class="button button-outline">Join the team</a>
@@ -76,26 +80,34 @@
         <h2 class="section-title">Research areas</h2>
         <p class="intro"><span class="draft">Intro line TBD</span></p>
       </div>
+      <!-- To give a card a photo background, add class "has-photo" and the image, like:
+           <div class="area-card has-photo" style="background-image: url('images/propulsion.jpg')">
+           then delete its "Background image" label. -->
       <div class="grid-5">
-        <div class="card">
+        <div class="area-card">
           <span class="number">01</span>
           <h3 class="item-title">Propulsion &amp; combustion</h3>
+          <span class="bg-label">Background image</span>
         </div>
-        <div class="card">
+        <div class="area-card">
           <span class="number">02</span>
           <h3 class="item-title">Energetics &amp; materials</h3>
+          <span class="bg-label">Background image</span>
         </div>
-        <div class="card">
+        <div class="area-card">
           <span class="number">03</span>
           <h3 class="item-title">Systems &amp; integration</h3>
+          <span class="bg-label">Background image</span>
         </div>
-        <div class="card">
+        <div class="area-card">
           <span class="number">04</span>
           <h3 class="item-title">Testing &amp; AI diagnostics</h3>
+          <span class="bg-label">Background image</span>
         </div>
-        <div class="card">
+        <div class="area-card">
           <span class="number">05</span>
           <h3 class="item-title">Education &amp; outreach</h3>
+          <span class="bg-label">Background image</span>
         </div>
       </div>
 
@@ -122,16 +134,17 @@
   </section>
 
 
-  <!-- ===== CAD spin =====
-       To add the video, replace the photo-slot div with:
-       <video class="photo-landscape" src="images/cad-spin.mp4" autoplay muted loop playsinline></video> -->
+  <!-- ===== Interactive CAD =====
+       Replace the photo-slot div with an embedded 3D viewer (the "embed" code from Onshape, Sketchfab, etc.),
+       or with a looping video:
+       <video class="photo-landscape" src="images/cad.mp4" autoplay muted loop playsinline></video> -->
   <section class="section blue">
     <div class="container cad">
       <div>
         <h2 class="section-title">SPIRIT test stand</h2>
         <p>Test stand for liquid, solid and hybrid rocket engines up to 10 kN of thrust.</p>
       </div>
-      <div class="photo-slot dark photo-landscape"><span>CAD spin</span></div>
+      <div class="photo-slot dark photo-landscape"><span>Interactive CAD</span></div>
     </div>
   </section>
 

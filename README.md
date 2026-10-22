@@ -87,7 +87,7 @@ Size classes:
 | Class | Shape | Used for |
 | --- | --- | --- |
 | `photo-wide` | Very wide | Top of each inner page |
-| `photo-landscape` | 16:9 | News, CAD spin |
+| `photo-landscape` | 16:9 | News, interactive CAD |
 | `photo-card` | 3:2 | Cards |
 | `headshot` | Portrait | People |
 
@@ -126,5 +126,5 @@ Fonts are Montserrat (headings) and Source Sans 3 (text), loaded from Google Fon
 ## Before launch
 
 - Replace all draft text and photo placeholders
-- Add the logo once the name and logo are confirmed with the university
+- Add the logo: put it in `images/` and swap the "Logo" box in each page's header for an `<img>` (see the comment above it)
 - Delete the `<meta name="robots" content="noindex">` line from every page so search engines can find the site
