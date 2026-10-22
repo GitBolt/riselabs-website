@@ -1,5 +1,5 @@
 /* =========================================================
-   RISE Lab website styles
+   RISE Labs website styles
    One file for the whole site. Sections are marked with
    big comments like this one so things are easy to find.
    ========================================================= */
@@ -743,17 +743,18 @@ img, video {
 /* Small "Built by" line at the very bottom */
 .footer-credit {
   margin-top: 64px;
-  font-size: 13px;
+  font-size: 15px;
   color: #8b98aa;
 }
 
 .footer-credit a {
   color: #d3dae4;
-  text-decoration: underline;
+  font-weight: 600;
 }
 
 .footer-credit a:hover {
   color: var(--white);
+  text-decoration: underline;
 }
 
 

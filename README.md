@@ -1,6 +1,6 @@
-# RISE Lab website
+# RISE Labs website
 
-The website for RISE Lab, Department of Aerospace Engineering, University of Illinois Urbana-Champaign.
+The website for RISE Labs, Department of Aerospace Engineering, University of Illinois Urbana-Champaign.
 
 It is plain HTML and CSS. There is no framework and no build step. Node.js is only used to preview the site on your computer.
 
@@ -66,7 +66,7 @@ Text that still needs to be written is wrapped in a draft span, which shows in i
 When the real text is ready, remove the span:
 
 ```html
-<p>RISE Lab builds and tests...</p>
+<p>RISE Labs builds and tests...</p>
 ```
 
 

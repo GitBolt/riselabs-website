@@ -1,7 +1,7 @@
 {
   "name": "rise-lab-website",
   "private": true,
-  "description": "RISE Lab website. Plain HTML and CSS.",
+  "description": "RISE Labs website. Plain HTML and CSS.",
   "scripts": {
     "start": "serve ."
   },

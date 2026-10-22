@@ -1,4 +1,4 @@
-# RISE Lab website: project notes
+# RISE Labs website: project notes
 
 Hosting, domain, accounts, and what we still need to decide. For how to edit the site, see `README.md`.
 
@@ -56,7 +56,7 @@ Decision needed: which path, the exact name, and who pays.
 - [ ] Vercel account under Prof. Gonzalez: free plan or Pro?
 - [ ] Lab name and logo confirmed with the university (Luke)
 - [ ] Who writes the text for each page (About us, PEARL, SPIRIT, Student collaboration, Sponsorships, Join the team)
-- [ ] Photos: high-quality landscape photos, professional headshots, and RISE Lab polos for the photos (from the email thread)
+- [ ] Photos: high-quality landscape photos, professional headshots, and RISE Labs polos for the photos (from the email thread)
 - [ ] A short CAD spin video for the home page
 
 ## Launch steps
