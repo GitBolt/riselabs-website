@@ -1,0 +1,900 @@
+/* =========================================================
+   RISE Lab website styles
+   One file for the whole site. Sections are marked with
+   big comments like this one so things are easy to find.
+   ========================================================= */
+
+
+/* ---------- Colors and fonts ----------
+   Change a color here and it updates everywhere. */
+:root {
+  --blue: #13294b;          /* Illinois blue */
+  --blue-dark: #0e1f3a;
+  --orange: #ff5f05;        /* Illinois orange */
+  --orange-light: #ff7a33;
+  --white: #ffffff;
+  --soft-blue: #e3edf8;     /* PEARL pages */
+  --light-gray: #f3f6fa;    /* alternating section background */
+
+  --text: #131b28;          /* headings */
+  --text-body: #556375;     /* paragraphs */
+  --text-light: #627083;    /* small notes, dates */
+  --border: rgba(19, 27, 40, 0.12);
+
+  --heading-font: "Montserrat", sans-serif;
+  --body-font: "Source Sans 3", sans-serif;
+}
+
+
+/* ---------- Basics ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--text-body);
+  font-family: var(--body-font);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--heading-font);
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img, video {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Keeps content centered with space on the sides */
+.container {
+  max-width: 1296px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+
+/* ---------- Text styles ---------- */
+.big-title {
+  font-size: 76px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.page-title {
+  font-size: 60px;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.section-title {
+  font-size: 42px;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.item-title {
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.intro {
+  font-size: 20px;
+  max-width: 52ch;
+}
+
+.small {
+  font-size: 15px;
+  color: var(--text-light);
+}
+
+/* Draft text: anything not written yet. Remove the span when the real text is ready. */
+.draft {
+  font-style: italic;
+  opacity: 0.72;
+}
+
+
+/* ---------- Buttons ---------- */
+.button {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.button-orange {
+  background: var(--orange);
+  color: var(--blue);
+}
+
+.button-orange:hover {
+  background: var(--orange-light);
+}
+
+/* Outline button for dark blue backgrounds */
+.button-outline {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.button-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+
+/* ---------- Header (top of every page) ---------- */
+.site-header {
+  background: var(--white);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 80px;
+}
+
+.brand-name {
+  display: block;
+  font-family: var(--heading-font);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: var(--blue);
+}
+
+.brand-sub {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.main-nav a {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.main-nav a:hover {
+  background: rgba(19, 27, 40, 0.05);
+  color: var(--text);
+}
+
+/* Highlights the page you are on. Add class="current" to that page's link. */
+.main-nav a.current {
+  background: rgba(19, 41, 75, 0.08);
+  color: var(--blue);
+}
+
+.main-nav a.button {
+  margin-left: 8px;
+  padding: 10px 16px;
+}
+
+
+/* ---------- Photo slots ----------
+   Gray boxes that hold the space until a real photo is added.
+   To add a photo, swap the <div class="photo-slot ..."> for
+   <img class="..." src="images/your-photo.jpg" alt="what is in the photo">
+   and keep the same size class (photo-wide, photo-landscape, photo-card, headshot). */
+.photo-slot {
+  position: relative;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background-color: #e6edf6;
+  /* faint grid lines */
+  background-image:
+    linear-gradient(rgba(19, 41, 75, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(19, 41, 75, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* The little label in the corner */
+.photo-slot span {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
+  color: rgba(19, 41, 75, 0.7);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Dark version, used on blue sections */
+.photo-slot.dark {
+  background-color: var(--blue-dark);
+  border-color: rgba(255, 255, 255, 0.1);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.photo-slot.dark span {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #d3dae4;
+}
+
+/* Sizes. These work for both photo slots and real <img> photos. */
+.photo-wide      { aspect-ratio: 21 / 9; border-radius: 20px; }
+.photo-landscape { aspect-ratio: 16 / 9; border-radius: 16px; }
+.photo-card      { aspect-ratio: 3 / 2;  border-radius: 16px; }
+.headshot        { aspect-ratio: 4 / 5;  border-radius: 16px; }
+
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 112px 0;
+}
+
+.section.gray {
+  background: var(--light-gray);
+}
+
+.section.blue {
+  background: var(--blue);
+}
+
+.section.blue h2 {
+  color: var(--white);
+}
+
+.section.blue p {
+  color: #a9b6c6;
+}
+
+/* Section heading on the left, intro line on the right */
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px 48px;
+  margin-bottom: 48px;
+}
+
+.section-head .intro {
+  text-align: right;
+  max-width: 46ch;
+}
+
+/* Grids of cards */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 72px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px 24px;
+}
+
+/* White box with a border */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+/* Photo with a title and text underneath */
+.feature h3 {
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+
+/* ---------- Home page: top banner ---------- */
+.hero {
+  background-color: var(--blue);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(160deg, #1b3663, var(--blue-dark));
+  background-size: 32px 32px, 32px 32px, 100% 100%;
+  /* To use a real photo, replace the three lines above with:
+     background-image: linear-gradient(90deg, rgba(10, 20, 38, 0.85), rgba(10, 20, 38, 0.2)), url("images/hero.jpg");
+     background-size: cover;
+     background-position: center; */
+  position: relative;
+  padding: 128px 0 168px;
+}
+
+.hero h1 {
+  color: var(--white);
+}
+
+.hero .intro {
+  color: #d3dae4;
+  margin: 24px 0 16px;
+}
+
+/* "Landscape photo" label in the top corner of the banner. Delete it once a photo is added. */
+.hero-label {
+  position: absolute;
+  top: 24px;
+  right: 48px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #d3dae4;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* The three cards that overlap the bottom of the banner */
+.program-cards {
+  position: relative;
+  margin-top: -56px;
+}
+
+.program-cards a {
+  display: block;
+  height: 100%;
+  box-shadow: 0 12px 36px rgba(19, 41, 75, 0.12);
+}
+
+.program-cards a:hover {
+  border-color: rgba(19, 27, 40, 0.25);
+}
+
+.program-cards h3 {
+  color: var(--blue);
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.learn-more {
+  display: block;
+  margin-top: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+
+/* ---------- Home page: CAD spin ---------- */
+.cad {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  align-items: center;
+  gap: 72px;
+}
+
+.cad p {
+  margin-top: 16px;
+  font-size: 20px;
+}
+
+
+/* ---------- Timeline (schedule and join steps) ---------- */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.timeline.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.timeline li {
+  position: relative;
+  padding-top: 48px;
+}
+
+/* The line connecting the dots */
+.timeline li::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 0;
+  right: -32px;
+  height: 2px;
+  background: rgba(19, 41, 75, 0.14);
+}
+
+.timeline li:last-child::before {
+  right: 0;
+}
+
+.timeline .dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+  background: var(--white);
+  color: var(--blue);
+  font-family: var(--heading-font);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 24px;
+}
+
+.timeline .when {
+  font-weight: 600;
+  color: var(--blue);
+  font-size: 15px;
+}
+
+.timeline h3 {
+  margin: 4px 0 8px;
+}
+
+
+/* ---------- Home page: news ---------- */
+.news {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.news-featured h3 {
+  font-size: 28px;
+  margin: 8px 0;
+}
+
+.news-featured .small {
+  margin-top: 24px;
+}
+
+.news-list li {
+  display: grid;
+  grid-template-columns: 168px 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.news-list .photo-slot {
+  aspect-ratio: 4 / 3;
+}
+
+.news-list h3 {
+  margin: 4px 0;
+}
+
+
+/* ---------- Blue call-to-action box ---------- */
+.cta {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px 48px;
+  padding: 64px;
+  border-radius: 20px;
+  background: linear-gradient(160deg, #1b3663, var(--blue-dark));
+}
+
+.cta h2 {
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.cta p {
+  color: #d3dae4;
+  font-size: 20px;
+}
+
+.cta-section {
+  padding-bottom: 112px;
+}
+
+
+/* ---------- Inner pages: top band ---------- */
+.page-band {
+  background: linear-gradient(160deg, #1a3460, var(--blue-dark));
+  padding: 96px 0 224px;
+}
+
+.page-band h1 {
+  color: var(--white);
+}
+
+.page-band .intro {
+  color: #d3dae4;
+  margin: 24px 0 8px;
+}
+
+/* PEARL uses soft blue instead of dark blue */
+.page-band.soft {
+  background: var(--soft-blue);
+}
+
+.page-band.soft h1 {
+  color: var(--blue);
+}
+
+.page-band.soft .intro {
+  color: var(--text-body);
+}
+
+/* The wide photo that overlaps the bottom of the band */
+.band-photo {
+  margin-top: -160px;
+}
+
+.band-photo .photo-slot,
+.band-photo img {
+  box-shadow: 0 22px 70px rgba(19, 41, 75, 0.1);
+}
+
+/* On the PEARL page, gray sections become soft blue */
+.pearl .section.gray {
+  background: var(--soft-blue);
+}
+
+
+/* ---------- People ---------- */
+.person h3 {
+  margin-top: 16px;
+  font-size: 17px;
+}
+
+.faculty-card {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  align-items: center;
+  gap: 56px;
+  max-width: 880px;
+  padding: 20px;
+  box-shadow: 0 22px 70px rgba(19, 41, 75, 0.1);
+}
+
+.faculty-card h3 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.faculty-card .contact {
+  margin-top: 32px;
+}
+
+.faculty-card a {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+
+/* ---------- PEARL page ---------- */
+.number {
+  display: block;
+  margin-bottom: 16px;
+  font-family: var(--heading-font);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.database {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 56px;
+  padding: 20px;
+  box-shadow: 0 22px 70px rgba(19, 41, 75, 0.1);
+}
+
+.database-text {
+  padding: 24px 0 24px 24px;
+}
+
+.database-text p + p {
+  margin-top: 16px;
+}
+
+
+/* ---------- Student collaboration: course list ---------- */
+.course-list {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--white);
+  overflow: hidden;
+  box-shadow: 0 22px 70px rgba(19, 41, 75, 0.1);
+}
+
+.course-list li {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 12px 48px;
+  padding: 28px 40px;
+}
+
+.course-list li + li {
+  border-top: 1px solid var(--border);
+}
+
+
+/* ---------- Sponsorships: logo wall ---------- */
+.logo-wall {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.logo-wall li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 7;
+  margin: 0 -1px -1px 0;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+  color: rgba(19, 41, 75, 0.45);
+}
+
+.logo-wall img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+
+/* ---------- Footer (bottom of every page) ---------- */
+.site-footer {
+  background: var(--blue);
+  color: #a9b6c6;
+  padding: 88px 0;
+  font-size: 15px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 0.75fr 0.9fr;
+  gap: 48px;
+}
+
+.site-footer h2 {
+  color: var(--white);
+  font-size: 42px;
+  letter-spacing: -0.035em;
+  margin-bottom: 16px;
+}
+
+.site-footer .contact-text {
+  font-size: 17px;
+  margin-bottom: 24px;
+}
+
+.footer-label {
+  color: #d3dae4;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.site-footer li {
+  margin-bottom: 8px;
+}
+
+.site-footer li a:hover {
+  color: var(--white);
+}
+
+.footer-brand {
+  font-family: var(--heading-font);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+/* Small "Built by" line at the very bottom */
+.footer-credit {
+  margin-top: 64px;
+  font-size: 13px;
+  color: #8b98aa;
+}
+
+.footer-credit a {
+  color: #d3dae4;
+  text-decoration: underline;
+}
+
+.footer-credit a:hover {
+  color: var(--white);
+}
+
+
+/* ---------- Tablets (screens narrower than 1040px) ---------- */
+@media (max-width: 1040px) {
+  .header-inner {
+    flex-wrap: wrap;
+    padding-top: 16px;
+  }
+
+  /* Nav links drop below the logo and wrap onto more lines */
+  .main-nav {
+    width: 100%;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+  }
+
+  .main-nav a.button {
+    margin-left: 0;
+  }
+
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cad,
+  .news,
+  .database {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline,
+  .timeline.three {
+    grid-template-columns: 1fr;
+  }
+
+  /* Timeline turns vertical */
+  .timeline li {
+    padding-top: 2px;
+    padding-left: 48px;
+  }
+
+  .timeline li::before {
+    top: 0;
+    bottom: -32px;
+    left: 13px;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+
+  .timeline li:last-child::before {
+    bottom: 0;
+  }
+}
+
+
+/* ---------- Phones (screens narrower than 700px) ---------- */
+@media (max-width: 700px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .big-title { font-size: 48px; }
+  .page-title { font-size: 40px; }
+  .section-title,
+  .site-footer h2 { font-size: 30px; }
+  .intro,
+  .cta p,
+  .cad p { font-size: 17px; }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .section-head {
+    display: block;
+  }
+
+  .section-head .intro {
+    text-align: left;
+    margin-top: 12px;
+  }
+
+  .grid-2,
+  .grid-3,
+  .course-list li,
+  .faculty-card,
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-4,
+  .logo-wall {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    padding: 96px 0 120px;
+  }
+
+  .hero-label {
+    right: 16px;
+  }
+
+  .photo-wide {
+    aspect-ratio: 4 / 3;
+  }
+
+  .page-band {
+    padding: 64px 0 120px;
+  }
+
+  .band-photo {
+    margin-top: -72px;
+  }
+
+  .cta {
+    display: block;
+    padding: 32px;
+  }
+
+  .cta .buttons {
+    margin-top: 24px;
+  }
+
+  .news-list li {
+    grid-template-columns: 112px 1fr;
+    gap: 16px;
+  }
+
+  .database-text {
+    padding: 8px;
+  }
+
+  .faculty-card .headshot {
+    max-width: 220px;
+  }
+
+  .cta-section {
+    padding-bottom: 72px;
+  }
+}

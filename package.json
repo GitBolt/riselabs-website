@@ -1,0 +1,11 @@
+{
+  "name": "rise-lab-website",
+  "private": true,
+  "description": "RISE Lab website. Plain HTML and CSS.",
+  "scripts": {
+    "start": "serve ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.6"
+  }
+}
